@@ -1,0 +1,32 @@
+name: 'AWS Device Farm Github Action'
+description: 'This action allows you to use commands similar to AWS Device Farm CLI.'
+author: 'robbrad'
+branding:
+  icon: 'check'
+  color: 'green'
+runs:
+  using: docker
+  image: Dockerfile
+inputs:
+  command:
+    description: "The command that will be performed. More info: https://docs.aws.amazon.com/cli/latest/reference/devicefarm/index.html?highlight=devicefarm#available-commands"
+    required: false
+  aws_access_key_id:
+    description: "The AWS access key part of your credentials. More info: https://docs.aws.amazon.com/cli/latest/reference/configure/"
+    required: false
+  aws_secret_access_key:
+    description: "The AWS access key part of your credentials. More info: https://docs.aws.amazon.com/cli/latest/reference/configure/"
+    required: false
+  aws_session_token:
+    description: "The AWS access key part of your credentials. More info: https://docs.aws.amazon.com/cli/latest/reference/configure/"
+    required: false
+  aws_region:
+    description: "This is the region of the bucket. S3 namespace is global but the bucket is regional."
+    required: false
+    default: "us-west-2"
+  metadata_service_timeout:
+    description: "The number of seconds to wait until the metadata service request times out. More info: https://docs.aws.amazon.com/cli/latest/reference/configure/"
+    required: false
+  flags:
+    description: "Additional query flags."
+    required: false
